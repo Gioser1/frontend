@@ -3,153 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/styles/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #1e1e1e;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    #cookie-rain {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .cookie {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      animation: fall linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .wrapper {
-      position: relative;
-      z-index: 2;
-      max-width: 400px;
-      margin: 8% auto;
-      padding: 2em;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-
-    .wrapper h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .input-box {
-      position: relative;
-      margin: 20px 0;
-    }
-
-    .input-box input {
-      width: 100%;
-      padding: 10px 40px 10px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .input-box i {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .remember-forgot {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9em;
-      margin-bottom: 20px;
-    }
-
-    .btn.rgb-btn {
-      position: relative;
-      overflow: hidden;
-      border: none;
-      background: #222;
-      color: white;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 0;
-    }
-
-    .btn.rgb-btn::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
-      background-size: 400%;
-      animation: rgb-border 8s linear infinite;
-      z-index: -1;
-      filter: blur(3px);
-    }
-
-    .btn.rgb-btn span {
-      position: relative;
-      z-index: 2;
-    }
-
-    .btn.rgb-btn::after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      right: 2px;
-      bottom: 2px;
-      background: #222;
-      border-radius: 5px;
-      z-index: 1;
-    }
-
-    @keyframes rgb-border {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .register-link {
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #007bff;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 
 <body>
@@ -157,16 +12,16 @@
   <div id="cookie-rain"></div>
 
   <div class="wrapper">
-    <form action="">
+    <form id="loginForm">
       <h1>Login</h1>
 
       <div class="input-box">
-        <input type="text" placeholder="Usuario" required>
+        <input type="text" id="usuario" placeholder="Usuario" required>
         <i class='bx bxs-user'></i>
       </div>
 
       <div class="input-box">
-        <input type="password" placeholder="Contraseña" required>
+        <input type="password" id="clave" placeholder="Contraseña" required>
         <i class='bx bxs-lock-alt'></i>
       </div>
 
@@ -180,29 +35,12 @@
       <div class="register-link">
         <p>¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
       </div>
+
+      <p id="mensaje" style="text-align:center; color:red; margin-top:10px;"></p>
     </form>
   </div>
 
-  <script>
-    const cookieRain = document.getElementById("cookie-rain");
-
-    function createCookie() {
-      const img = document.createElement("img");
-      img.src = "galleta2.png";
-      img.classList.add("cookie");
-
-      img.style.left = Math.random() * 100 + "vw";
-      img.style.animationDuration = (2 + Math.random() * 3) + "s";
-
-      cookieRain.appendChild(img);
-
-      setTimeout(() => {
-        img.remove();
-      }, 6000);
-    }
-
-    setInterval(createCookie, 200);
-  </script>
-
+  <script src="/components/script.js"></script>
+  <script src="/components/login.js"></script>
 </body>
 </html>
