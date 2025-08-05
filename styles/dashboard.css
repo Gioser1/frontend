@@ -97,13 +97,15 @@ input, textarea {
 }
 
 .modal-content {
-  background-color: #1a1a1a;
+  background: #1a1a1a;
   color: #00ffcc;
   margin: 10% auto;
   padding: 20px;
   border: 2px solid #00ffcc;
   width: 300px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px #00ffcc;
+  text-align: center;
 }
 
 .close {
@@ -258,4 +260,25 @@ input, textarea {
   height: 13px;
   border: solid black;
   border-width: 0 3px 3px 0;
+}
+
+.checkbox-box {
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  background: #fffde7;
+  padding: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(17, 16, 14, 0.5);
+}
+
+.modal-card {
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  background: #1a1a1a;
+  box-shadow: 0 0 18px #00ffcc;
+  padding: 24px;
+  margin: 18px auto;
+  max-width: 350px;
+  text-align: center;
 }

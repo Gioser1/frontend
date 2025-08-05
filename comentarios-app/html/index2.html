@@ -43,23 +43,33 @@
 
     <div class="component">
       <h3>Checkbox</h3>
-      <label class="checkbox-retro">
-        <input type="checkbox">
-        <span class="checkmark"></span>
-        Acepto el desafío
-      </label>
+      <div class="checkbox-box">
+        <label class="checkbox-retro">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+          Acepto el desafío
+        </label>
+      </div>
     </div>
 
     <div class="component">
       <h3>Modal</h3>
-      <button class="btn" onclick="mostrarModal()">Abrir Modal</button>
+      <div class="modal-card">
+        <button class="btn" onclick="mostrarModal()">Abrir Modal</button>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span onclick="cerrarModal()" class="close">&times;</span>
+            <p>🚀 ¡Modal activado con éxito!</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="Comentarios">
     <h2>📨 Formulario de contacto</h2>
     <form id="contactForm">
-      <input type="text" name="nombre" placeholder="Nombre gamer" required>
+      <input type="text" name="nombre" placeholder="Nombre" required>
       <input type="email" name="correo" placeholder="Correo electrónico" required>
       <textarea name="mensaje" placeholder="Tu mensaje a la resistencia..." required></textarea>
       <button type="submit" class="btn">Enviar</button>
@@ -67,14 +77,8 @@
     <p id="mensajeFormulario"></p>
   </section>
   <footer class="footer">
-    <p>© 2023 Dashboard Gamer Retro. Todos los derechos reservados.</p>
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span onclick="cerrarModal()" class="close">&times;</span>
-      <p>🚀 ¡Modal activado con éxito!</p>
-    </div>
-  </div>
-   <div class="comentarios-card">
+    <p>©  Todos los derechos reservados.</p>
+  <div class="comentarios-card">
     <a href="../frontend/comentarios.html" class="btn-comentarios">
       💬 Ir a comentarios
     </a>

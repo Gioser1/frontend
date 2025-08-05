@@ -267,4 +267,148 @@ body {
     a:hover {
       text-decoration: underline;
     }
-  
+
+.input-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo */
+body {
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor principal */
+.wrapper {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  transition: 0.3s ease;
+}
+
+/* Títulos */
+.wrapper h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Entradas */
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 40px 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #f1f1f1;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.input-box input:focus {
+  background: #e3e3e3;
+}
+
+.input-box i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 18px;
+}
+
+/* Checkbox y olvidaste */
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.remember-forgot a {
+  text-decoration: none;
+  color: #7159e0;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* Botón con animación RGB */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rgb-animation 6s infinite linear;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes rgb-animation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Enlace registro/login */
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-link a {
+  color: #7159e0;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mensajes */
+#mensaje, #mensajeRegistro {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+}
