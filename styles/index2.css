@@ -97,15 +97,13 @@ input, textarea {
 }
 
 .modal-content {
-  background: #1a1a1a;
+  background-color: #1a1a1a;
   color: #00ffcc;
   margin: 10% auto;
   padding: 20px;
   border: 2px solid #00ffcc;
   width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 0 18px #00ffcc;
-  text-align: center;
+  border-radius: 10px;
 }
 
 .close {
@@ -263,7 +261,7 @@ input, textarea {
 }
 
 .checkbox-box {
-  border: 2px solid #00ffcc;
+  border: 2px solid #ffd54f;
   border-radius: 10px;
   background: #fffde7;
   padding: 16px;
@@ -271,14 +269,67 @@ input, textarea {
   margin-bottom: 10px;
   box-shadow: 0 2px 8px rgba(17, 16, 14, 0.5);
 }
+.boton-cerrar {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+  transition: all 0.3s ease;
+}
 
-.modal-card {
-  border: 2px solid #00ffcc;
-  border-radius: 12px;
-  background: #1a1a1a;
-  box-shadow: 0 0 18px #00ffcc;
-  padding: 24px;
-  margin: 18px auto;
-  max-width: 350px;
-  text-align: center;
+.boton-cerrar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.5);
+}
+
+.boton-cerrar:active {
+  transform: scale(0.98);
+}
+.boton-rebote {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+  position: relative;
+  animation: reboteVertical 2s ease-in-out infinite;
+}
+
+@keyframes reboteVertical {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 50px;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    top: 0;
+  }
+}
+.mover-texto {
+  position: relative;
+  animation: moverDerecha 5s linear infinite alternate;
+  font-size: 16px;
+  color: white;
+}
+
+/* Animación que lo mueve de izquierda a derecha */
+@keyframes moverDerecha {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100px; /* Puedes ajustar la distancia */
+  }
 }

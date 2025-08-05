@@ -1,11 +1,13 @@
+// Modal
 function mostrarModal() {
-  document.getElementById('modal').style.display = 'block';
+  document.getElementById('modal').style.display = 'flex';
 }
 
 function cerrarModal() {
   document.getElementById('modal').style.display = 'none';
 }
 
+// Formulario
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
   const mensaje = document.getElementById("mensajeFormulario");
@@ -14,3 +16,17 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   this.reset();
 });
 
+// Secciones
+function mostrarSeccion(id) {
+  const secciones = document.querySelectorAll('.seccion');
+  secciones.forEach(sec => sec.classList.remove('visible'));
+
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('visible');
+  }
+}
+// Botón para cerrar sesión
+document.getElementById("cerrarSesion").addEventListener("click", function () {
+  window.location.href = "/comentarios-app/html/index.html"; 
+});
