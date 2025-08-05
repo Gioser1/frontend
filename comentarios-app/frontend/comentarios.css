@@ -1,0 +1,167 @@
+body {
+  background: linear-gradient(135deg, #1a1a1a 60%, #00ffcc 100%);
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.comentarios-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  background: url('https://www.transparenttextures.com/patterns/hexellence.png');
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.comentarios-container {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 48px auto 32px auto;
+  padding: 32px 24px 24px 24px;
+  background: rgba(0,255,204,0.07);
+  border: 2px solid #00ffcc;
+  border-radius: 16px;
+  box-shadow: 0 0 24px #00ffcc;
+  backdrop-filter: blur(4px);
+}
+
+.comentarios-container h2 {
+  margin-top: 0;
+  text-shadow: 0 0 12px #00ffcc;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.comentario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.comentario-form input,
+.comentario-form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid #00ffcc;
+  background: #1a1a1a;
+  color: #00ffcc;
+  font-family: inherit;
+  font-size: 1em;
+  resize: none;
+  box-shadow: 0 0 8px #00ffcc44;
+  transition: border 0.2s;
+}
+
+.comentario-form input:focus,
+.comentario-form textarea:focus {
+  border: 2px solid #00bbaa;
+  outline: none;
+}
+
+.comentario-form button {
+  padding: 12px 28px;
+  font-weight: bold;
+  color: black;
+  background: linear-gradient(45deg, #00ffcc, #00bbaa);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px #00ffcc;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.comentario-form button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(45deg, #00bbaa, #00ffcc);
+  color: #fff;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+#mensajeExito {
+  display: none;
+  background: #00ffcc;
+  color: #1a1a1a;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 14px #00ffcc;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.comentarios-titulo {
+  margin-top: 32px;
+  margin-bottom: 18px;
+  font-size: 1.3em;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+  letter-spacing: 1px;
+}
+
+#listaComentarios {
+  margin-top: 0;
+  text-align: left;
+}
+
+.comentario {
+  background: #1a1a1a;
+  border: 1.5px solid #00ffcc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 12px #00ffcc;
+  color: #fff;
+  position: relative;
+  animation: fadeIn 0.5s;
+}
+
+.comentario .usuario {
+  color: #00ffcc;
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 1.08em;
+  letter-spacing: 1px;
+}
+
+.comentario .texto {
+  margin-left: 8px;
+  display: block;
+  font-size: 1em;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.footer {
+  background: linear-gradient(90deg, #1a1a1a 60%, #00ffcc 100%);
+  color: #00ffcc;
+  text-align: center;
+  padding: 24px 0 16px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1em;
+  border-top: 2px solid #00ffcc;
+  box-shadow: 0 -2px 18px #00ffcc;
+  margin-top: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer p {
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #00ffcc;
+}

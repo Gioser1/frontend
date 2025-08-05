@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comentarios Retro Gamer</title>
+  <link rel="stylesheet" href="../frontend/comentarios.css">
+</head>
+<body>
+  <div class="comentarios-bg"></div>
+  <div class="comentarios-container">
+    <h2>💬 Zona de Comentarios</h2>
+    <form class="comentario-form" onsubmit="enviarComentario(event)">
+      <input type="text" id="usuario" placeholder="Tu nombre" required>
+      <textarea id="mensaje" rows="3" placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensajeExito"></div>
+    <h3 class="comentarios-titulo">📝 Mensajes de la comunidad</h3>
+    <div id="listaComentarios"></div>
+  </div>
+  <footer class="footer">
+    <p>Todos los derechos reservados.</p>
+  </footer>
+  <script>
+    async function enviarComentario(e) {
+      e.preventDefault();
+      const usuario = document.getElementById('usuario').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      if (!usuario || !mensaje) return;
+
+      try {
+        await fetch('http://localhost:3000/comentarios', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usuario, mensaje })
+        });
+        mostrarMensajeExito();
+        cargarComentarios();
+        document.getElementById('usuario').value = '';
+        document.getElementById('mensaje').value = '';
+      } catch (error) {
+        alert('Error al enviar el comentario');
+      }
+    }
+
+    function mostrarMensajeExito() {
+      const mensajeDiv = document.getElementById('mensajeExito');
+      mensajeDiv.style.display = 'block';
+      mensajeDiv.textContent = '✅ ¡Has enviado tu comentario correctamente!';
+      setTimeout(() => {
+        mensajeDiv.style.display = 'none';
+      }, 2000);
+    }
+
+    async function cargarComentarios() {
+      try {
+        const res = await fetch('http://localhost:3000/comentarios');
+        const datos = await res.json();
+        const lista = document.getElementById('listaComentarios');
+        lista.innerHTML = '';
+        datos.forEach(c => {
+          const div = document.createElement('div');
+          div.className = 'comentario';
+          div.innerHTML = `<span class="usuario">${c.usuario}</span><span class="texto">${c.mensaje}</span>`;
+          lista.appendChild(div);
+        });
+      } catch (error) {
+        console.error('Error al cargar comentarios');
+      }
+    }
+
+    // Cargar comentarios al abrir la página
+    cargarComentarios();
+  </script>
+</body>
+</html>

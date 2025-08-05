@@ -1,5 +1,3 @@
-
-
 let intentosRestantes = 3;
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
@@ -11,9 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
   if (usuario === 'admin' && clave === 'admin123') {
    
-    window.location.href = 'html/index2.html';
-
- // Redirige al dashboard
+    window.location.href = '../html/index2.html'; // Redirige al index2
   } else {
     intentosRestantes--;
     if (intentosRestantes > 0) {
