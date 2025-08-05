@@ -54,7 +54,7 @@
 
     async function cargarComentarios() {
       try {
-        const res = await fetch('http://localhost:3000/comentarios');
+        const res = await fetch('http://localhost:5500/comentarios');
         const datos = await res.json();
         const lista = document.getElementById('listaComentarios');
         lista.innerHTML = '';
